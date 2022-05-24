@@ -1,0 +1,13 @@
+<odoo>
+<!--    record ini hanya di-create saat install-->
+    <record id="sequence_perpus_peminjaman_seq" model="ir.sequence">
+        <field name="name">Peminjaman sequence</field>
+        <field name="code">perpus.peminjaman</field>
+        <field name="prefix">P</field>
+        <field eval="3" name="padding"/>
+        <field eval="1" name="number_next"/>
+        <field eval="1" name="number_increment"/>
+        <field eval="False" name="company_id"/>
+        <field eval="True" name="use_date_range"/>
+    </record>
+</odoo>

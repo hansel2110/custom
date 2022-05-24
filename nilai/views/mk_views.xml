@@ -1,0 +1,75 @@
+<odoo>
+    <record id="mhs_view_form" model="ir.ui.view">
+        <field name="name">mhs.view.form</field>
+        <field name="model">nilai.mk</field>
+        <field name="arch" type="xml">
+            <form string="Mata Kuliah Form">
+                <header>
+                    <!-- Done - Canceled - Settodraft - -->
+                    <!-- Class Mahasiswa need states draft - -->
+                    <button name="action_done" string="Done" states="draft" type="object" class="btn-primary"/>
+                    <!-- Canceled need states Done - -->
+                    <button name="action_canceled" string="Cancel" states="voted" type="object" class="btn-primary"/>
+                    <!-- Set to draft need states Canceled - -->
+                    <button name="action_settodraft" states="canceled" string="Set to Draft" type="object"
+                            class="btn-primary"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,done"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="code"/>
+                            <field name="name"/>
+                            <field name="credit"/>
+                        </group>
+                        <group>
+                            <field name="state"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="mhs_view_list" model="ir.ui.view">
+        <field name="name">mhs.view.list</field>
+        <field name="model">nilai.mk</field>
+        <field name="arch" type="xml">
+            <tree string="Mata Kuliah list">
+                <field name="code"/>
+                <field name="name"/>
+                <field name="credit"/>
+                <field name="state"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="mhs_view_search" model="ir.ui.view">
+        <field name="name">nilai.mk.search</field>
+        <field name="model">nilai.mk</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="code"/>
+                <field name="name"/>
+                <filter string="Draft" name="draft_filter" domain="[('state', '=', 'draft')]"/>
+                <filter string="Done" name="confirmed_filter" domain="[('state', '=', 'done')]"/>
+
+                <group string="Group By..." expand="0" name="groupby">
+                    <filter string="State" name="by_state" context="{'group_by': 'state'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="mk_action" model="ir.actions.act_window">
+        <field name="name">MK</field>
+        <field name="res_model">nilai.mk</field>
+        <field name="view_id" ref="mhs_view_list"/>
+        <field name="view_mode">tree,list,form</field>
+    </record>
+
+    <menuitem id="mk_menu" parent="nilai.nilai_menu" name="MK"
+              action="mk_action" sequence="20"/>
+</odoo>
