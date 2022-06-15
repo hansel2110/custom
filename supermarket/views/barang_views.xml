@@ -114,6 +114,8 @@
         <field name="view_mode">list,kanban,form</field>
     </record>
 
+    <menuitem id="supermarket_menu" parent="idea.exercise_menu" name="Supermarket"
+              sequence="40"/>
     <menuitem id="barang_menu" parent="supermarket.supermarket_menu" name="Barang"
               action="barang_action" sequence="30"/>
 </odoo>
