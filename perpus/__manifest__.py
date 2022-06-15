@@ -11,7 +11,6 @@
     'data': [
         'security/ir.model.access.csv',
         'views/anggota_views.xml',
-        'views/pegawai_views.xml',
         'views/buku_views.xml',
         'views/admin_views.xml',
         'views/peminjaman_views.xml',
