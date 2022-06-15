@@ -1,0 +1,15 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_barang_user","Access Barang for User","model_supermarket_barang","sales_team.group_sale_salesman_all_leads",1,1,1,0
+"access_barang_admin","Access Barang for Admin","model_supermarket_barang","sales_team.group_sale_manager",1,1,1,1
+"access_merek_user","Access Merek for User","model_supermarket_merek","sales_team.group_sale_salesman_all_leads",1,1,1,0
+"access_merek_admin","Access Merek for Admin","model_supermarket_merek","sales_team.group_sale_manager",1,1,1,1
+"access_kategori_user","Access Kategori for User","model_supermarket_kategori","sales_team.group_sale_salesman_all_leads",1,1,1,0
+"access_kategori_admin","Access Kategori for Admin","model_supermarket_kategori","sales_team.group_sale_manager",1,1,1,1
+"access_detail_transaksi_user","Access Detail Transaksi for User","model_supermarket_detail_transaksi","sales_team.group_sale_salesman_all_leads",1,1,1,0
+"access_detail_transaksi_admin","Access Detail Transaksi for Admin","model_supermarket_detail_transaksi","sales_team.group_sale_manager",1,1,1,1
+"access_transaksi_user","Access Transaksi for User","model_supermarket_transaksi","sales_team.group_sale_salesman_all_leads",1,1,1,0
+"access_transaksi_admin","Access Transaksi for Admin","model_supermarket_transaksi","sales_team.group_sale_manager",1,1,1,1
+"access_wiztransaksi_user","Access Transaksi for User Sales","model_wiz_supermarket_transaksi","sales_team.group_sale_salesman_all_leads",1,1,1,0
+"access_wiztransaksi_admin","Access Transaksi for Admin","model_wiz_supermarket_transaksi","sales_team.group_sale_manager",1,1,1,1
+"access_transaksi_lines_wiz_user","Access Transaksi_lines for User Sales","model_wiz_supermarket_transaksi_lines","sales_team.group_sale_salesman_all_leads",1,1,1,1
+"access_transaksi_lines_wiz_admin","Access Transaksi_lines for Admin","model_wiz_supermarket_transaksi_lines","sales_team.group_sale_manager",1,1,1,1

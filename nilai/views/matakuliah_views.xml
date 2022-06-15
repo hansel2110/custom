@@ -67,7 +67,7 @@
         <field name="name">Mata Kuliah</field>
         <field name="res_model">nilai.matakuliah</field>
         <field name="view_id" ref="mk_view_list"/>
-        <field name="view_mode">tree,list,form</field>
+        <field name="view_mode">tree,form</field>
     </record>
 
     <menuitem id="mk_menu" parent="nilai.nilai_menu" name="MataKuliah"

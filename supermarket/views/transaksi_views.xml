@@ -1,0 +1,128 @@
+<odoo>
+    <record id="transaksi_view_form" model="ir.ui.view">
+        <field name="name">transaksi.view.form</field>
+        <field name="model">supermarket.transaksi</field>
+        <field name="arch" type="xml">
+            <form string="Transaksi Form">
+                <header>
+                    <button name="action_done" string="Done" states="draft" type="object" class="btn-primary"/>
+                    ]<button name="action_canceled" string="Cancel" states="done" type="object" class="btn-primary"/>
+                    ]<button name="action_settodraft" states="canceled" string="Set to Draft" type="object"
+                            class="btn-primary"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,done"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_wiz_supermarket" type="object" string="Update Transaksi" class="oe_stat_button"
+                                icon="fa-pencil-square-o">
+                        </button>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="pegawai_id"/>
+                            <field name="customer_id"/>
+                            <field name="poin"/>
+                            <field name="tgl_transaksi"/>
+                            <field name="total_barang"/>
+                        </group>
+                        <group>
+                            <field name="poin_baru"/>
+                            <field name="penggunaan_poin"/>
+                            <field name="total_transaksi"/>
+                            <field name="hemat"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Detail transaksi" name="detail_transaksi">
+                            <field name="detail_transaksi_ids">
+                                <tree editable="bottom">
+                                    <field name="barang_id"/>
+                                    <field name="jumlah_barang"/>
+                                    <field name="harga_barang"/>
+                                    <field name="diskon_barang"/>
+                                    <field name="total_harga_barang"/>
+                                    <field name="state" invisible="1"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="transaksi_view_list" model="ir.ui.view">
+        <field name="name">transaksi.view.list</field>
+        <field name="model">supermarket.transaksi</field>
+        <field name="arch" type="xml">
+            <tree string="Transaksi list">
+                <field name="name"/>
+                <field name="tgl_transaksi"/>
+                <field name="total_transaksi"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="transaksi_view_kanban" model="ir.ui.view">
+    <field name="name">transaksi.view.kanban</field>
+    <field name="model">supermarket.transaksi</field>
+    <field name="arch" type="xml">
+        <kanban>
+            <field name="name"/>
+            <field name="tgl_transaksi"/>
+            <field name="total_transaksi"/>
+            <field name="state"/>
+            <templates>
+                <t t-name="kanban-box">
+                    <div class="oe_kanban_global_click o_kanban_record_has_image_fill o_res_partner_kanban">
+                        <div class="oe_kanban_details">
+                            <strong class="o_kanban_record_title oe_partner_heading">
+                                <field name="name"/>
+                            </strong>
+                            <ul>
+                                <li t-if="record.tgl_transaksi.raw_value">
+                                    <field name="tgl_transaksi"/>
+                                </li>
+                                <li t-if="record.total_transaksi.raw_value">
+                                    <field name="total_transaksi"/>
+                                </li>
+                                <li t-if="record.state.raw_value">
+                                    <field name="state"/>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </t>
+            </templates>
+        </kanban>
+    </field>
+    </record>
+
+    <record id="transaksi" model="ir.ui.view">
+        <field name="name">supermarket.transaksi.search</field>
+        <field name="model">supermarket.transaksi</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <filter string="Draft" name="draft_filter" domain="[('state', '=', 'draft')]"/>
+                <filter string="Done" name="confirmed_filter" domain="[('state', '=', 'done')]"/>
+
+                <group string="Group By..." expand="0" name="groupby">
+                    <filter string="State" name="by_state" context="{'group_by': 'state'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="transaksi_action" model="ir.actions.act_window">
+        <field name="name">Transaksi</field>
+        <field name="res_model">supermarket.transaksi</field>
+        <field name="view_id" ref="transaksi_view_list"/>
+        <field name="view_mode">tree,kanban,form</field>
+    </record>
+
+    <menuitem id="transaksi_menu" parent="supermarket.supermarket_menu" name="Transaksi"
+              action="transaksi_action" sequence="40"/>
+</odoo>

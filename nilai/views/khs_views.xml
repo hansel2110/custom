@@ -85,7 +85,7 @@
         <field name="name">KHS</field>
         <field name="res_model">nilai.khs</field>
         <field name="view_id" ref="khs_view_list"/>
-        <field name="view_mode">tree,list,form</field>
+        <field name="view_mode">tree,form</field>
     </record>
 
     <menuitem id="khs_menu" parent="nilai.nilai_menu" name="KHS"

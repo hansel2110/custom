@@ -38,6 +38,7 @@ class wizkelas(models.TransientModel):
                 'mhs_id': rec.mhs_id.id,
                 'ref_kelas_lines_id': rec.id
             })
+        self.line_ids = line_ids
 
 class kelas_lines_wiz(models.TransientModel):
     _name = 'wiz.nilai.kelas.lines'

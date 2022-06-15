@@ -115,7 +115,7 @@
         <field name="name">Peminjaman</field>
         <field name="res_model">perpus.peminjaman</field>
         <field name="view_id" ref="peminjaman_view_list"/>
-        <field name="view_mode">list,tree,kanban,form</field>
+        <field name="view_mode">tree,kanban,form</field>
     </record>
 
     <menuitem id="peminjaman_menu" parent="perpus.perpus_menu" name="Peminjaman"

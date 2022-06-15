@@ -1,0 +1,40 @@
+<odoo>
+<!--    record ini hanya di-create saat install-->
+    <record id="sequence_supermarket_merek_seq" model="ir.sequence">
+        <field name="name">Supermarket sequence</field>
+        <field name="code">supermarket.merek</field>
+        <field name="prefix">M</field>
+        <field eval="3" name="padding"/>
+        <field eval="1" name="number_next"/>
+        <field eval="1" name="number_increment"/>
+        <field eval="False" name="company_id"/>
+    </record>
+       <record id="sequence_supermarket_kategori_seq" model="ir.sequence">
+        <field name="name">Supermarket sequence</field>
+        <field name="code">supermarket.kategori</field>
+        <field name="prefix">K</field>
+        <field eval="3" name="padding"/>
+        <field eval="1" name="number_next"/>
+        <field eval="1" name="number_increment"/>
+        <field eval="False" name="company_id"/>
+    </record>
+    <record id="sequence_supermarket_barang_seq" model="ir.sequence">
+        <field name="name">Supermarket sequence</field>
+        <field name="code">supermarket.barang</field>
+        <field name="prefix">B</field>
+        <field eval="3" name="padding"/>
+        <field eval="1" name="number_next"/>
+        <field eval="1" name="number_increment"/>
+        <field eval="False" name="company_id"/>
+    </record>
+    <record id="sequence_supermarket_transaksi_seq" model="ir.sequence">
+        <field name="name">Supermarket sequence</field>
+        <field name="code">supermarket.transaksi</field>
+        <field name="prefix">T</field>
+        <field eval="3" name="padding"/>
+        <field eval="1" name="number_next"/>
+        <field eval="1" name="number_increment"/>
+        <field eval="False" name="company_id"/>
+        <field eval="True" name="use_date_range"/>
+    </record>
+</odoo>

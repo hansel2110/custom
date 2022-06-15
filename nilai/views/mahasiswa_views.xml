@@ -67,7 +67,7 @@
         <field name="name">Mahasiswa</field>
         <field name="res_model">nilai.mahasiswa</field>
         <field name="view_id" ref="mhs_view_list"/>
-        <field name="view_mode">tree,list,form</field>
+        <field name="view_mode">tree,form</field>
     </record>
 
     <menuitem id="nilai_menu" parent="idea.exercise_menu" name="Nilai"
